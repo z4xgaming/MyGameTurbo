@@ -5,45 +5,307 @@
 
     <LinearLayout
         android:id="@+id/panel"
-        android:layout_width="230dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#E6000000"
-        android:padding="12dp"
+        android:background="#F0121212"
+        android:padding="10dp"
         android:visibility="gone"
-        android:layout_marginEnd="8dp">
+        android:elevation="12dp">
+
+        <!-- Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="6dp">
+            <TextView
+                android:text="🎮 Game Turbo"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/closeBtn"
+                android:text="✕"
+                android:textColor="@color/red"
+                android:textSize="22sp"
+                android:padding="6dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Row 1: Battery / Perf / Quality -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <LinearLayout android:id="@+id/btnBattery"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card">
+                <TextView android:id="@+id/icoBattery" android:text="🔋"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Battery" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnPerf"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:id="@+id/icoPerf" android:text="⚡"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Performance" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnQuality"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:id="@+id/icoQuality" android:text="🎨"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/txtQuality" android:text="Quality HD"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: DND / RAM / Shot -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <LinearLayout android:id="@+id/btnDnd"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card">
+                <TextView android:id="@+id/icoDnd" android:text="🔕"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="DND" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnRam"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:text="🧹"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Clear RAM" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnShot"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:text="📸"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Shot" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 3: Record / Bright / Crosshair -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <LinearLayout android:id="@+id/btnRecord"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card">
+                <TextView android:id="@+id/icoRecord" android:text="🎥"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Record" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnBright"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:id="@+id/icoBright" android:text="☀️"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Brightness" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnCross"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:id="@+id/icoCross" android:text="🎯"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Crosshair" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 4: Rotate / Sound / Airplane -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+            <LinearLayout android:id="@+id/btnRotate"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card">
+                <TextView android:id="@+id/icoRotate" android:text="🔄"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Rotate" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnSound"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:text="🔊"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Sound" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnAirplane"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:text="✈️"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Airplane" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 5: Timer / Compass / Whitelist -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <LinearLayout android:id="@+id/btnTimer"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card">
+                <TextView android:id="@+id/icoTimer" android:text="⏱️"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Timer" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnCompass"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:id="@+id/icoCompass" android:text="🧭"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Compass" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btnCalls"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical"
+                android:gravity="center" android:padding="8dp"
+                android:background="@color/dark_card"
+                android:layout_marginStart="4dp">
+                <TextView android:text="📞"
+                    android:textSize="20sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="Calls" android:textColor="@color/text_secondary"
+                    android:textSize="9sp" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="6dp"/>
 
         <TextView
-            android:text="🎮 Game Turbo"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:text="Games"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:paddingStart="4dp"
+            android:layout_marginBottom="4dp"/>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_height="wrap_content"
+            android:maxHeight="260dp">
             <LinearLayout
                 android:id="@+id/gamesContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"/>
         </ScrollView>
-
-        <TextView
-            android:text="My Game Turbo"
-            android:textColor="#888888"
-            android:textSize="11sp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:src="@drawable/ic_launcher"
+    <LinearLayout
+        android:id="@+id/handleBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
         android:background="@drawable/bg_circle"
-        android:padding="6dp"/>
+        android:padding="6dp">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_launcher"/>
+    </LinearLayout>
 </FrameLayout>

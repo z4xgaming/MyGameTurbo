@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Game Turbo</string>
+    <string name="games">Games</string>
+    <string name="stats">Stats</string>
+    <string name="tools">Tools</string>
+    <string name="settings">Settings</string>
+
+    <string name="add_game">+ Game Add Karo</string>
+    <string name="start_turbo">🚀 Floating Icon Chalu Karo</string>
+    <string name="stop_turbo">⏹ Floating Icon Band Karo</string>
+
+    <string name="battery">Battery</string>
+    <string name="performance">Performance</string>
+    <string name="quality">Quality</string>
+    <string name="dnd">DND</string>
+    <string name="clear_ram">Clear RAM</string>
+    <string name="screenshot">Screenshot</string>
+    <string name="record">Record</string>
+    <string name="brightness">Brightness</string>
+    <string name="crosshair">Crosshair</string>
+    <string name="rotate_lock">Rotate Lock</string>
+    <string name="sound_boost">Sound</string>
+    <string name="airplane">Airplane</string>
+    <string name="whitelist">Calls</string>
+    <string name="timer">Timer</string>
+    <string name="compass">Compass</string>
+
+    <string name="overlay_stats">Overlay Stats</string>
+    <string name="fps_counter">FPS Counter</string>
+    <string name="ping">Ping</string>
+    <string name="ram_monitor">RAM</string>
+    <string name="battery_stat">Battery</string>
+    <string name="cpu">CPU</string>
+
+    <string name="auto_detect">Auto Game Detect</string>
+    <string name="auto_brightness">Auto Brightness</string>
+    <string name="auto_dnd">Auto DND</string>
+    <string name="auto_rotate">Auto Rotate Lock</string>
+    <string name="auto_volume">Auto Volume Max</string>
+
+    <string name="play_time">Play Time</string>
+    <string name="history">History</string>
+    <string name="data_usage">Data Usage</string>
+    <string name="most_played">Most Played</string>
+
+    <string name="theme">Theme</string>
+    <string name="icon_color">Icon Color</string>
+    <string name="panel_size">Panel Size</string>
+    <string name="edge_side">Edge Side</string>
+    <string name="landscape">Landscape Panel</string>
+
+    <string name="backup">Backup</string>
+    <string name="restore">Restore</string>
+    <string name="about">About</string>
+    <string name="app_lock">App Lock</string>
+    <string name="language">Language</string>
+</resources>

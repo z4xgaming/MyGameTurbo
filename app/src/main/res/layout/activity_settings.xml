@@ -3,64 +3,231 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#121212">
+    android:background="@color/dark_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="14dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#1E1E1E">
-
-        <TextView
-            android:id="@+id/backBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:text="←"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Settings"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp"/>
+        android:background="@color/dark_bar">
+        <TextView android:id="@+id/backBtn"
+            android:layout_width="40dp" android:layout_height="40dp"
+            android:text="←" android:textColor="@color/white"
+            android:textSize="24sp" android:gravity="center"/>
+        <TextView android:text="Settings"
+            android:textColor="@color/white" android:textSize="20sp"
+            android:textStyle="bold" android:layout_marginStart="8dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/overlayBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="🪟  Overlay Permission Do"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:background="?android:attr/selectableItemBackground"/>
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/stopBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="⏹  Floating Icon Band Karo"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:background="?android:attr/selectableItemBackground"/>
+            <TextView android:text="General"
+                android:textColor="@color/orange" android:textSize="13sp"
+                android:textStyle="bold" android:padding="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/aboutBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="ℹ  About"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:background="?android:attr/selectableItemBackground"/>
+            <LinearLayout android:id="@+id/rowAutostart"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Autostart on Boot"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutostart" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
 
+            <LinearLayout android:id="@+id/rowAutoDetect"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Auto Game Detect"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutoDetect" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowAutoBright"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Auto Brightness Boost"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutoBright" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowAutoDnd"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Auto DND in Game"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutoDnd" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowAutoRotate"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Auto Rotation Lock"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutoRotate" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowAutoVolume"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Auto Volume Max"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateAutoVolume" android:text="OFF"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView android:text="Appearance"
+                android:textColor="@color/orange" android:textSize="13sp"
+                android:textStyle="bold" android:padding="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <LinearLayout android:id="@+id/rowPanelSize"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Panel Size"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/statePanelSize" android:text="Medium"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowEdgeSide"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Edge Side"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateEdgeSide" android:text="Both"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowIconColor"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="Icon Color"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateIconColor" android:text="Orange"
+                    android:textColor="@color/text_secondary" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView android:text="Permissions"
+                android:textColor="@color/orange" android:textSize="13sp"
+                android:textStyle="bold" android:padding="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <LinearLayout android:id="@+id/rowOverlayPerm"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="🪟  Overlay Permission"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/stateOverlay" android:text="GRANT"
+                    android:textColor="@color/orange" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowDndPerm"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="🔕  DND Access"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="GRANT"
+                    android:textColor="@color/orange" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowUsagePerm"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="📈  Usage Stats Access"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+                <TextView android:text="GRANT"
+                    android:textColor="@color/orange" android:textSize="12sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView android:text="Other"
+                android:textColor="@color/orange" android:textSize="13sp"
+                android:textStyle="bold" android:padding="16dp"
+                android:paddingBottom="8dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <LinearLayout android:id="@+id/rowStop"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="⏹  Stop Floating Icon"
+                    android:textColor="@color/red" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/rowAbout"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="14dp" android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:text="ℹ  About"
+                    android:textColor="@color/white" android:textSize="15sp"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
