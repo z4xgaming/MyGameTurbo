@@ -5,9 +5,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Build;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.app.NotificationCompat;
-import java.util.List;
 
 public class FloatingService extends Service {
 
@@ -101,22 +99,31 @@ public class FloatingService extends Service {
     private void loadGames(LinearLayout panel) {
         LinearLayout container = panel.findViewById(R.id.gamesContainer);
         PackageManager pm = getPackageManager();
-        Intent main = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ResolveInfo> apps = pm.queryIntentActivities(main, 0);
+        SharedPreferences prefs = getSharedPreferences("gt", MODE_PRIVATE);
+        String data = prefs.getString("games", "");
 
-        for (ResolveInfo info : apps) {
-            ApplicationInfo ai = info.activityInfo.applicationInfo;
-            boolean isGame = (ai.flags & ApplicationInfo.FLAG_IS_GAME) != 0
-                    || (Build.VERSION.SDK_INT >= 26 && ai.category == ApplicationInfo.CATEGORY_GAME);
-            if (!isGame) continue;
+        if (data.isEmpty()) {
+            TextView tv = new TextView(this);
+            tv.setText("Pehle app me games add karo");
+            tv.setTextColor(Color.GRAY);
+            tv.setPadding(20, 20, 20, 20);
+            container.addView(tv);
+            return;
+        }
+
+        for (String item : data.split(";")) {
+            String[] parts = item.split("\\|");
+            if (parts.length < 2) continue;
+            final String pkg = parts[0];
+            String label = parts[1];
 
             TextView tv = new TextView(this);
-            tv.setText(ai.loadLabel(pm));
+            tv.setText("🎮  " + label);
             tv.setTextColor(Color.WHITE);
-            tv.setTextSize(14);
-            tv.setPadding(20, 25, 20, 25);
+            tv.setTextSize(15);
+            tv.setPadding(20, 30, 20, 30);
             tv.setOnClickListener(v -> {
-                Intent li = pm.getLaunchIntentForPackage(ai.packageName);
+                Intent li = pm.getLaunchIntentForPackage(pkg);
                 if (li != null) {
                     li.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(li);
@@ -124,14 +131,6 @@ public class FloatingService extends Service {
                 panel.setVisibility(View.GONE);
                 panelOpen = false;
             });
-            container.addView(tv);
-        }
-
-        if (container.getChildCount() == 0) {
-            TextView tv = new TextView(this);
-            tv.setText("Koi game nahi mila");
-            tv.setTextColor(Color.GRAY);
-            tv.setPadding(20, 20, 20, 20);
             container.addView(tv);
         }
     }
